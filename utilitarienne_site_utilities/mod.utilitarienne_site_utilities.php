@@ -15,14 +15,15 @@ class Utilitarienne_site_utilities {
         // fixed_order="5|42|3|8"
         $orderedOutput = implode("|", $entryIdsArray);
 
-        var_dump($orderedOutput);
+        $C = $this->make_channel_entries_loop($orderedOutput);
+        var_dump($C->entries());
         die();
 
     }
 
     
 
-    private make_channel_entries_loop($ordered)
+    private function make_channel_entries_loop($ordered)
     {
         // If we don't have a value, just bomb out
         if(!$ordered || trim($ordered) == '')
@@ -36,12 +37,12 @@ class Utilitarienne_site_utilities {
         }
 
         ee()->TMPL->tagparams['fixed_order'] = $ordered;
-        ee()->TMPL->tagparams['show_future_entries'] = 'yes';
-        ee()->TMPL->tagparams['status'] = 'open';
         ee()->TMPL->tagparams['dynamic'] = 'no';
 
+        // {exp:channel:entries fixed_order="blah" dynamic="no"}
+
         $C = new Channel();
-        return $C->entries();
+        return $C;
     }
 
 }
