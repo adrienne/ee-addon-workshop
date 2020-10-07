@@ -15,9 +15,8 @@ class Utilitarienne_site_utilities {
         // fixed_order="5|42|3|8"
         $orderedOutput = implode("|", $entryIdsArray);
 
-        $C = $this->make_channel_entries_loop($orderedOutput);
-        var_dump($C->entries());
-        die();
+        $this->return_data = $this->make_channel_entries_loop($orderedOutput);
+        return $this->return_data;
 
     }
 
@@ -42,7 +41,7 @@ class Utilitarienne_site_utilities {
         // {exp:channel:entries fixed_order="blah" dynamic="no"}
 
         $C = new Channel();
-        return $C;
+        return $C->entries();
     }
 
 }
