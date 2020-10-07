@@ -1,0 +1,17 @@
+{
+    "name": "utilitarienne/utilitarienne_site_utilities",
+    "description": "Basic utilities for the site",
+    "version": "1.0.0",
+    "keywords": [
+        "ExpressionEngine"
+    ],
+    "support": {
+        "docs": "https:\/\/utilitarienne.com"
+    },
+    "authors": [
+        {
+            "name": "Adrienne L. Travis",
+            "homepage": "https:\/\/utilitarienne.com"
+        }
+    ]
+}
