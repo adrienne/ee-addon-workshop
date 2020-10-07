@@ -24,6 +24,12 @@ class Utilitarienne_site_utilities {
 
     private make_channel_entries_loop($ordered)
     {
+        // If we don't have a value, just bomb out
+        if(!$ordered || trim($ordered) == '')
+        {
+            return false;
+        }
+
         // Include the class if it isn't included
         if(!class_exists('Channel')) {
             require_once(PATH_ADDONS.'channel/mod.channel.php');
