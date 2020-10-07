@@ -16,8 +16,26 @@ class Utilitarienne_site_utilities {
         $orderedOutput = implode("|", $entryIdsArray);
 
         var_dump($orderedOutput);
+        die();
 
     }
 
+    
+
+    private make_channel_entries_loop($ordered)
+    {
+        // Include the class if it isn't included
+        if(!class_exists('Channel')) {
+            require_once(PATH_ADDONS.'channel/mod.channel.php');
+        }
+
+        ee()->TMPL->tagparams['fixed_order'] = $ordered;
+        ee()->TMPL->tagparams['show_future_entries'] = 'yes';
+        ee()->TMPL->tagparams['status'] = 'open';
+        ee()->TMPL->tagparams['dynamic'] = 'no';
+
+        $C = new Channel();
+        return $C->entries();
+    }
 
 }
