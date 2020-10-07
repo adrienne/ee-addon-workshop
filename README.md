@@ -2,6 +2,16 @@
 
 Some helper files for the workshop given on Oct 7 and Oct 13, 2020
 
+## Database
+
+You can work with your existing data for a great deal of this, but for a couple of our use-cases you may want to load the default_db.sql file into your EE installation (although you should certainly be able to follow along even if you do not use it). 
+
+As long as you are running EE 5.3.2, you should be able to simply add a new database to your host, import the data, and change your EE config to point to the new db. You can change it back immediately afterward!
+
+## Helper Files
+
+There's one helper file I've pre-included here, `helpers/parameters_helper.php`, because it's got some *really* complicated stuff going on and it's boilerplate that you shouldn't have to modify. We do have some other functions that are basically boilerplate that we'll be discussing during the workshop, things we'll reuse over and over, but they're less fiddly and we will just walk through them directly.
+
 ## Scaffolding
 
 We are using [this EE Scaffolding generator](https://ee-addon-generator.triplenerdscore.xyz) to generate a module, but it is … not perfect. We have to fix some of its settings after creation.
