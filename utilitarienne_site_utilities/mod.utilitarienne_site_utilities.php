@@ -10,7 +10,15 @@ class Utilitarienne_site_utilities {
 
     public function custom_order()
     {
-        $entryIdsArray = [5, 42, 3, 8];
+        // https://docs.expressionengine.com/latest/development/services/model/fetching.html
+        // $query = ee('Model')->get('ChannelEntry')->with('Channel')->fields('entry_id', 'title')->filter('ChannelEntry.channel_id', 4);
+        // $entries = $query->all();
+        
+        // OR
+        $sql = "SELECT entry_id, title from exp_channel_titles WHERE channel_id = ?;";
+        $results = ee('db')->query($sql, [4])->result_array();
+
+        var_dump($results); die();
         
         // fixed_order="5|42|3|8"
         $orderedOutput = implode("|", $entryIdsArray);
