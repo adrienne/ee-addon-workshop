@@ -28,6 +28,13 @@ class Utilitarienne_site_utilities {
 
     }
 
+
+    public function date_shortcodes()
+    {
+        ee()->load->add_package_path(PATH_THIRD.'utilitarienne_site_utilities', true);
+        ee()->load->library(['shortcodes']);
+    }
+
     
 
     private function make_channel_entries_loop($ordered)
