@@ -33,6 +33,10 @@ class Utilitarienne_site_utilities {
     {
         ee()->load->add_package_path(PATH_THIRD.'utilitarienne_site_utilities', true);
         ee()->load->library(['shortcodes']);
+
+        $tagdata = ee()->TMPL->tagdata;
+        return ee()->shortcodes->parser($tagdata);
+
     }
 
     
