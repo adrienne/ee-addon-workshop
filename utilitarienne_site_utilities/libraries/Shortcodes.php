@@ -25,15 +25,16 @@ class Shortcodes
             }, 
             false
         );
-        
+
         $this->_makeShortcode(
             'DATE', 
             function ($match) {
+                // the whole parameter string will always be in $match[1]
                 if(isset($match[1])) {
                     $parameters = parameterize($match[1]);
                     $format = str_replace('%', '', $parameters['format']);
                 } else {
-                    $format = 'M-d-Y H:i';
+                    $format = 'Y-M-d H:i';
                 }
                 return date($format);
             }, 
